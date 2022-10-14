@@ -28,16 +28,16 @@ class DetailMahasiswa : AppCompatActivity(){
             popupMenu.setOnMenuItemClickListener(PopupMenu.OnMenuItemClickListener { item ->
                 when(item.itemId){
                     R.id.l_inputnilai ->{
-                        val pinda = Intent(this@DetailMahasiswa,InputNilai::class.java)
-                        startActivity(pinda)
+                        val pinda1 = Intent(this@DetailMahasiswa,InputNilai::class.java)
+                        startActivity(pinda1)
                     }
                     R.id.l_seminar ->{
-                        val pinda = Intent(this@DetailMahasiswa,Seminar::class.java)
-                        startActivity(pinda)
+                        val pinda2 = Intent(this@DetailMahasiswa,Seminar::class.java)
+                        startActivity(pinda2)
                     }
                     R.id.l_pembatalan ->{
-                        val pinda = Intent(this@DetailMahasiswa,PembatalanKp::class.java)
-                        startActivity(pinda)
+                        val pinda3 = Intent(this@DetailMahasiswa,PembatalanKp::class.java)
+                        startActivity(pinda3)
                     }
                 }
                 true
@@ -75,6 +75,11 @@ class DetailMahasiswa : AppCompatActivity(){
 
         adapter = LogBookAdapter(logbookArrayList)
         recyclerView.adapter = adapter
+
+        adapter.onItemClick = {
+            val intent = Intent(this, DetailKegiatanLogbook::class.java)
+            startActivity(intent)
+        }
 
     }
 

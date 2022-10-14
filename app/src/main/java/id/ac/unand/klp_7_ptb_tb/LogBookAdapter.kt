@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 class LogBookAdapter(private val logbookList : ArrayList<datalogbook>)
     : RecyclerView.Adapter<LogBookAdapter.LogBookViewHolder> () {
 
+    var onItemClick : ((datalogbook)-> Unit)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LogBookViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_logbook,parent, false)
         return LogBookViewHolder(itemView)
@@ -18,6 +20,10 @@ class LogBookAdapter(private val logbookList : ArrayList<datalogbook>)
         val LogBookList = logbookList[position]
         holder.harilogbook.text = LogBookList.hari
         holder.tanggallogbook.text = LogBookList.tanggal
+
+        holder.itemView.setOnClickListener{
+            onItemClick?.invoke(LogBookList)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -28,6 +34,8 @@ class LogBookAdapter(private val logbookList : ArrayList<datalogbook>)
     {
         val harilogbook :  TextView = itemView.findViewById(R.id.hari_logbook)
         val tanggallogbook : TextView = itemView.findViewById(R.id.tanggal_logbook)
+
+
 
     }
 }

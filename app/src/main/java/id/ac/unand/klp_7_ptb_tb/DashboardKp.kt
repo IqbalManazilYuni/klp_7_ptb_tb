@@ -38,7 +38,7 @@ class DashboardKp : AppCompatActivity() {
                 startActivity(it)
             }
         }
-
+        //dimulai dari sini
         recyclerView = findViewById(R.id.recycler_view)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
@@ -58,7 +58,7 @@ class DashboardKp : AppCompatActivity() {
 
         mahasiswaAdapter = MahasiswaAdapter(mahasiswaList)
         recyclerView.adapter = mahasiswaAdapter
-
+        //hingga sini
         mahasiswaAdapter.onItemClick = {
             val intent = Intent(this, DetailMahasiswa::class.java)
             startActivity(intent)

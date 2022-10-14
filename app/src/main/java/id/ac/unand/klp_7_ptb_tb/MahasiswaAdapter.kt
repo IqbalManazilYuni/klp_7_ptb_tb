@@ -14,6 +14,7 @@ class MahasiswaAdapter(private val mahasiswaList:ArrayList<mahasiswa>)
 
     var onItemClick : ((mahasiswa)-> Unit)? = null
 
+    //nampilin data sesuai dengan bagian layout
     class MahasiswaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val imageview : ImageView = itemView.findViewById(R.id.gambar_mahasiswa_item)
         val namaMahasiswa : TextView = itemView.findViewById(R.id.nama_mahasiswa_item)
@@ -25,7 +26,7 @@ class MahasiswaAdapter(private val mahasiswaList:ArrayList<mahasiswa>)
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_mahasiswa, parent, false)
         return MahasiswaViewHolder(view)
     }
-
+    //mengambil data dari class data dan menyimpan di variabel yang di deklarasikan di methode MahasiswaViewHolder
     override fun onBindViewHolder(holder: MahasiswaViewHolder, position: Int) {
         val Mahasiswa = mahasiswaList[position]
         holder.imageview.setImageResource(Mahasiswa.imgview)
@@ -33,11 +34,12 @@ class MahasiswaAdapter(private val mahasiswaList:ArrayList<mahasiswa>)
         holder.nimMahasiswa.text = Mahasiswa.nim_mahasiswa
         holder.lokasiMahasiswa.text = Mahasiswa.lokasi_kp
 
+        //bagian klik
         holder.itemView.setOnClickListener{
             onItemClick?.invoke(Mahasiswa)
         }
     }
-
+    //menghitung jumlah data
     override fun getItemCount(): Int {
         return mahasiswaList.size
     }
