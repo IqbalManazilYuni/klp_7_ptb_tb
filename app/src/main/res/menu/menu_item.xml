@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Input Nilai"
+        android:id="@+id/l_inputnilai"/>
+    <item android:title="Seminar"
+        android:id="@+id/l_seminar"/>
+    <item android:title="Pembatalan KP"
+        android:id="@+id/l_pembatalan"/>
+</menu>
