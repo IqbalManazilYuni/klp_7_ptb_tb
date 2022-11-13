@@ -9,13 +9,10 @@ class PembatalanKp : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pembatalan_kp)
+        val btnbacpembatalan = findViewById<ImageView>(R.id.backBtn)
 
-        val btnbackpembatalan = findViewById<ImageView>(R.id.backBtn)
-
-        btnbackpembatalan.setOnClickListener{
-            Intent(this, DetailMahasiswa::class.java).also{
-                startActivity(it)
-            }
+        btnbacpembatalan.setOnClickListener{
+            onBackPressed();
         }
     }
 }

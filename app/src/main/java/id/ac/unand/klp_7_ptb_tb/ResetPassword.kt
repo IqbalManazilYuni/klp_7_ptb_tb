@@ -12,15 +12,11 @@ class ResetPassword : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reset_password)
+        val btnbacrp = findViewById<ImageView>(R.id.backBtn)
 
-        val btnbackReset = findViewById<ImageView>(R.id.backResetPass)
-
-        btnbackReset.setOnClickListener{
-            Intent(this, ProfileDosen::class.java).also{
-                startActivity(it)
-            }
+        btnbacrp.setOnClickListener{
+            onBackPressed();
         }
-
         val btnReset = findViewById<Button>(R.id.resetPassword)
 
         btnReset.setOnClickListener{

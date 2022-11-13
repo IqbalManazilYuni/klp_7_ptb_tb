@@ -13,6 +13,20 @@
         android:theme="@style/Theme.Klp_7_ptb_tb"
         tools:targetApi="31">
         <activity
+            android:name=".IsiRespon"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".IsiNilaiMahasiswa"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".DetailKegiatanLogbook"
             android:exported="false">
             <meta-data
@@ -34,21 +48,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Bottom"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".InputNilai"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".ItemLogbook"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

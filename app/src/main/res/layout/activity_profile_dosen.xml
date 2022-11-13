@@ -7,6 +7,26 @@
     android:elevation="8dp"
     tools:context=".ProfileDosen">
 
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#2E6578"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_back" />
+    </LinearLayout>
+
     <TextView
         android:id="@+id/textView9"
         style="@style/Widget.MaterialComponents.TextView"
@@ -29,7 +49,6 @@
         android:id="@+id/logo_unand_upp"
         android:layout_width="49dp"
         android:layout_height="58dp"
-        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LinearLayout1"
@@ -167,28 +186,5 @@
             android:layout_height="match_parent"
             android:src="@drawable/fotobapakhusnil" />
     </androidx.cardview.widget.CardView>
-
-    <LinearLayout
-        android:id="@+id/LinearLayout1"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_marginBottom="32dp"
-        android:background="#2E6578"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <ImageView
-            android:id="@+id/backBtn"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
-            android:src="@drawable/ic_back" />
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,20 +1,37 @@
 package id.ac.unand.klp_7_ptb_tb
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
+import id.ac.unand.klp_7_ptb_tb.databinding.ActivityDetailKegiatanLogbookBinding
 
 class DetailKegiatanLogbook : AppCompatActivity() {
+    lateinit var binding: ActivityDetailKegiatanLogbookBinding
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detail_kegiatan_logbook)
+        binding = ActivityDetailKegiatanLogbookBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val pindahdetailkegiatan = findViewById<ImageView>(R.id.backBtn)
-        pindahdetailkegiatan.setOnClickListener{
-            Intent(this,DetailMahasiswa::class.java).also {
+        val bundle : Bundle? = intent.extras
+        val tanggal = bundle!!.getString("tanggal")
+
+        binding.tanggallogbok.text = tanggal
+
+        val btnaddrespon = findViewById<Button>(R.id.respon)
+        btnaddrespon.setOnClickListener{
+            Intent(this, IsiRespon::class.java).also {
                 startActivity(it)
             }
         }
+        val btnbacdetail = findViewById<ImageView>(R.id.backBtn)
+
+        btnbacdetail.setOnClickListener{
+            onBackPressed();
+        }
     }
+
 }
