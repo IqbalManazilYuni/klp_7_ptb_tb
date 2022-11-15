@@ -44,9 +44,9 @@ class DashboardKp : AppCompatActivity() {
 
         mahasiswaList = ArrayList()
 
-        mahasiswaList.add(mahasiswa(R.drawable.ic_profile_dash, nama_mahasiswa = "Iqbal Manazil Yuni", nim_mahasiswa = "201152xxxx", lokasi_kp = "PT.Semen Padang"))
-        mahasiswaList.add(mahasiswa(R.drawable.ic_profile_dash, nama_mahasiswa = "Deyola Fadwa Shifana", nim_mahasiswa = "201152xxxx", lokasi_kp = "PT.Semen Padang"))
-        mahasiswaList.add(mahasiswa(R.drawable.ic_profile_dash, nama_mahasiswa = "Muhammad Erlangga", nim_mahasiswa = "201152xxxx", lokasi_kp = "PT.Semen Padang"))
+        mahasiswaList.add(mahasiswa(R.drawable.ic_profile_dash, "Iqbal Manazil Yuni", "201152xxxx", "PT.Semen Padang"))
+        mahasiswaList.add(mahasiswa(R.drawable.ic_profile_dash, "Deyola Fadwa Shifana", nim_mahasiswa = "201152xxxx", lokasi_kp = "PT.Semen Padang"))
+        mahasiswaList.add(mahasiswa(R.drawable.ic_profile_dash, "Muhammad Erlangga", nim_mahasiswa = "201152xxxx", lokasi_kp = "PT.Semen Padang"))
         mahasiswaList.add(mahasiswa(R.drawable.ic_profile_dash, nama_mahasiswa = "Muhammad Yudishtira", nim_mahasiswa = "201152xxxx", lokasi_kp = "PT.Semen Padang"))
         mahasiswaList.add(mahasiswa(R.drawable.ic_profile_dash, nama_mahasiswa = "Kemal Muhammad Heiro", nim_mahasiswa = "201152xxxx", lokasi_kp = "PT.Semen Padang"))
         mahasiswaList.add(mahasiswa(R.drawable.ic_profile_dash, nama_mahasiswa = "Ilham", nim_mahasiswa = "201152xxxx", lokasi_kp = "PT.Semen Padang"))
@@ -55,13 +55,23 @@ class DashboardKp : AppCompatActivity() {
         mahasiswaList.add(mahasiswa(R.drawable.ic_profile_dash, nama_mahasiswa = "Boby Dermawan", nim_mahasiswa = "201152xxxx", lokasi_kp = "PT.Semen Padang"))
         mahasiswaList.add(mahasiswa(R.drawable.ic_profile_dash, nama_mahasiswa = "Khalil Amir", nim_mahasiswa = "201152xxxx", lokasi_kp = "PT.Semen Padang"))
 
-
         mahasiswaAdapter = MahasiswaAdapter(mahasiswaList)
         recyclerView.adapter = mahasiswaAdapter
+
+        mahasiswaAdapter.setOnItemClickListerner(object : MahasiswaAdapter.onItemClickListener {
+            override fun onItemClick(position: Int) {
+                val intent = Intent(this@DashboardKp,DetailMahasiswa::class.java)
+                intent.putExtra("nama",mahasiswaList[position].nama_mahasiswa)
+                intent.putExtra("nim",mahasiswaList[position].nim_mahasiswa)
+                intent.putExtra("tempat",mahasiswaList[position].lokasi_kp)
+                startActivity(intent)
+            }
+        })
         //hingga sini
-        mahasiswaAdapter.onItemClick = {
-            val intent = Intent(this, DetailMahasiswa::class.java)
-            startActivity(intent)
-        }
+//        mahasiswaAdapter.onItemClick = {
+//            val intent = Intent(this, DetailMahasiswa::class.java)
+//            intent.putExtra("mahasiswa", it)
+//            startActivity(intent)
+//        }
     }
 }

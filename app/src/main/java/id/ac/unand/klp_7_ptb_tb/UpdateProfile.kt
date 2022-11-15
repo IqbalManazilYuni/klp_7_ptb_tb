@@ -13,12 +13,10 @@ class UpdateProfile : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update_profile)
 
-        val btnback2 = findViewById<ImageView>(R.id.backResetPass)
+        val btnbacup = findViewById<ImageView>(R.id.backBtn)
 
-        btnback2.setOnClickListener{
-            Intent(this, ProfileDosen::class.java).also{
-                startActivity(it)
-            }
+        btnbacup.setOnClickListener{
+            onBackPressed();
         }
         val btnUpdate = findViewById<Button>(R.id.updateBtn)
 

@@ -6,25 +6,23 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.TextView
 
-class InputNilai : AppCompatActivity() {
+class IsiNilaiMahasiswa : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_input_nilai)
+        setContentView(R.layout.activity_isi_nilai_mahasiswa)
+        val btnbacinputnilai = findViewById<ImageView>(R.id.backBtn)
 
-        val btntambah = findViewById<Button>(R.id.btntambah)
+        btnbacinputnilai.setOnClickListener{
+            onBackPressed();
+        }
 
-        btntambah.setOnClickListener{
-            Intent(this, IsiNilaiMahasiswa::class.java).also{
+        val btntambahnilai = findViewById<Button>(R.id.adddatamaha)
+        btntambahnilai.setOnClickListener{
+            Intent(this,InputNilai::class.java).also {
                 startActivity(it)
             }
-        }
-        val btnbacinput = findViewById<ImageView>(R.id.backBtn)
-
-        btnbacinput.setOnClickListener{
-            onBackPressed();
         }
     }
 }
