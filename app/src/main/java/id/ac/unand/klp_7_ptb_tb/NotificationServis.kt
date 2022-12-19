@@ -1,40 +1,28 @@
 package id.ac.unand.klp_7_ptb_tb
 
-import android.annotation.SuppressLint
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
+import android.app.Service
 import android.content.Context
 import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.view.View
-import android.widget.Button
-import android.widget.ImageView
+import android.os.IBinder
+import android.util.Log
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import com.google.firebase.messaging.FirebaseMessagingService
+import com.google.firebase.messaging.RemoteMessage
 
-class IsiRespon : AppCompatActivity() {
+class NotificationServis : FirebaseMessagingService() {
     private var CHANNEL_ID = "1"
-
-    @SuppressLint("MissingInflatedId")
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_isi_respon)
-
-        val btnbacinpurespon = findViewById<ImageView>(R.id.backBtn)
-
-        btnbacinpurespon.setOnClickListener{
-            onBackPressed();
-        }
-
-        val btntambahrespon = findViewById<Button>(R.id.tambahrespon)
-        btntambahrespon.setOnClickListener{
-            Intent(this,IsiRespon::class.java).also {
-                createNotificationChannel()
-                startActivity(it)
-            }
+    override fun onNewToken(token: String) {
+        val TAG = "Service-Debug"
+        Log.d(TAG, "Refreshed token: $token")
+    }
+    override fun onMessageReceived(remoteMessage: RemoteMessage) {
+        if(remoteMessage.notification != null){
+            createNotificationChannel()
         }
     }
     private fun createNotificationChannel() {
@@ -72,5 +60,4 @@ class IsiRespon : AppCompatActivity() {
             notify(notificationId, builder.build())
         }
     }
-
 }

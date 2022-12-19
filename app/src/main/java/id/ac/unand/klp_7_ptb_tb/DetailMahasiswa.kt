@@ -35,7 +35,7 @@ class DetailMahasiswa : AppCompatActivity(){
         binding.valueNimDetail.text = nim
         binding.valueTempatDetail.text = tempat
 
-        val btnbacdetaillog = findViewById<ImageView>(R.id.backBtn)
+        val btnbacdetaillog = binding.backBtn
 
         btnbacdetaillog.setOnClickListener{
             onBackPressed();

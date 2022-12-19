@@ -12,6 +12,8 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import id.ac.unand.klp_7_ptb_tb.databinding.ActivityDashboardKpBinding
+import id.ac.unand.klp_7_ptb_tb.databinding.ActivityHalamanLoginAppBinding
 import id.ac.unand.tb_klp_7.MahasiswaAdapter
 
 class DashboardKp : AppCompatActivity() {
@@ -20,18 +22,21 @@ class DashboardKp : AppCompatActivity() {
     private lateinit var mahasiswaList : ArrayList<mahasiswa>
     private lateinit var mahasiswaAdapter: MahasiswaAdapter
 
+    lateinit var binding: ActivityDashboardKpBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_dashboard_kp)
+        binding = ActivityDashboardKpBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val btnprofilegambar = findViewById<ImageView>(R.id.profileDosen)
+        val btnprofilegambar = binding.profileDosen
 
         btnprofilegambar.setOnClickListener{
             Intent(this, ProfileDosen::class.java).also{
                 startActivity(it)
             }
         }
-        val btntextgambar = findViewById<TextView>(R.id.tekprofile)
+        val btntextgambar = binding.tekprofile
 
         btntextgambar.setOnClickListener{
             Intent(this, ProfileDosen::class.java).also{
@@ -39,7 +44,7 @@ class DashboardKp : AppCompatActivity() {
             }
         }
         //dimulai dari sini
-        recyclerView = findViewById(R.id.recycler_view)
+        recyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         mahasiswaList = ArrayList()
