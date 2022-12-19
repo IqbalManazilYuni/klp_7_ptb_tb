@@ -10,8 +10,8 @@ import android.widget.Toast
 import id.ac.unand.klp_7_ptb_tb.Network.KpClient
 import id.ac.unand.klp_7_ptb_tb.Network.NetworkConfig
 import id.ac.unand.klp_7_ptb_tb.databinding.ActivityProfileDosenBinding
+import id.ac.unand.klp_7_ptb_tb.models.LogoutResponse
 import id.ac.unand.klp_7_ptb_tb.models.ProfileResponse
-import id.ac.unand.klp_7_ptb_tb.models.User
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -59,6 +59,40 @@ class ProfileDosen : AppCompatActivity() {
             }
 
         })
+
+        val btnlogout = binding.btnlogout
+
+        btnlogout.setOnClickListener {
+            if( token != null) {
+                val client: KpClient = NetworkConfig().getService()
+                val call: Call<LogoutResponse> = client.logout(token = "Bearer "+token)
+
+                call.enqueue(object: Callback<LogoutResponse> {
+                    override fun onFailure(call: Call<LogoutResponse>, t: Throwable) {
+                        Log.d("logout-debug",t.localizedMessage)
+//                Toast.makeText(this@LoginActivity, t.localizedMessage, Toast.LENGTH_SHORT).show()
+                    }
+                    override fun onResponse(call: Call<LogoutResponse>, response: Response<LogoutResponse>) {
+
+                        val respon = response.body()
+
+                        val sharedPref = getSharedPreferences("sharedpref", Context.MODE_PRIVATE) ?:return
+                        with (sharedPref.edit()) {
+                            putString("TOKEN", null)
+                            apply()
+                        }
+                        Log.d("logout-debug",  "respon : "+ respon )
+                        Toast.makeText(this@ProfileDosen, "Logout Berhasil", Toast.LENGTH_SHORT).show()
+                        val logout = Intent(this@ProfileDosen, HalamanLoginApp::class.java)
+                        logout.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        startActivity(logout)
+                        finish()
+                    }
+
+                })
+            }
+
+        }
 
         val btnbacpd = binding.backBtn
         btnbacpd.setOnClickListener{

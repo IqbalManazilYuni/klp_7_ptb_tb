@@ -26,18 +26,18 @@ class HalamanLoginApp : AppCompatActivity() {
         binding = ActivityHalamanLoginAppBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
-            val TAG = "LoginActivity-Debug"
-            if (!task.isSuccessful) {
-                Log.w(TAG, "Fetching FCM registration token failed", task.exception)
-                return@OnCompleteListener
-            }
-            val token = task.result
-
-            // Log and toast
-            Log.d(TAG, token)
-            Toast.makeText(baseContext, token, Toast.LENGTH_SHORT).show()
-        })
+//        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
+//            val TAG = "LoginActivity-Debug"
+//            if (!task.isSuccessful) {
+//                Log.w(TAG, "Fetching FCM registration token failed", task.exception)
+//                return@OnCompleteListener
+//            }
+//            val token = task.result
+//
+//            // Log and toast
+//            Log.d(TAG, token)
+//            Toast.makeText(baseContext, token, Toast.LENGTH_SHORT).show()
+//        })
         val btnlogin = binding.btnlogin
 
         //cek ada token atau ndak, kalo ada langsung ke MainActivity

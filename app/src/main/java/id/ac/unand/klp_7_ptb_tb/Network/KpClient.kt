@@ -10,7 +10,7 @@ interface KpClient {
     fun login(@Field("username") username: String, @Field("password") password:String): Call<LoginResponse>;
 
     @POST("/api/logout")
-    fun logout(): Call<LogoutResponse>
+    fun logout(@Header("Authorization") token: String): Call<LogoutResponse>
 
     @GET("/api/me")
     fun profile(@Header("Authorization") token:String):Call<ProfileResponse>
