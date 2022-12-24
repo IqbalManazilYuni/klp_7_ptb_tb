@@ -11,7 +11,7 @@
     <string name="todo">TODO</string>
     <string name="your_profile">Your Profile</string>
     <string name="email">Email</string>
-    <string name="value_email">husnilk_gmail_com</string>
+    <string name="value_email"> </string>
     <string name="nip">NIP</string>
-    <string name="value_nip">198201182008121002</string>
+    <string name="value_nip"> </string>
 </resources>

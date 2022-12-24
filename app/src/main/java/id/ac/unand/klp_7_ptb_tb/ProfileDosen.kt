@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import id.ac.unand.klp_7_ptb_tb.Network.KpClient
@@ -20,8 +21,6 @@ class ProfileDosen : AppCompatActivity() {
 
     lateinit var binding: ActivityProfileDosenBinding
     override fun onCreate(savedInstanceState: Bundle?) {
-
-
 
         val sharedPref = getSharedPreferences("sharedpref", Context.MODE_PRIVATE)?: return
         val token = sharedPref.getString("token", "")
@@ -98,19 +97,28 @@ class ProfileDosen : AppCompatActivity() {
         btnbacpd.setOnClickListener{
             onBackPressed();
         }
-        val btnResetPassword = findViewById<Button>(R.id.btnresetpass)
+        val btnResetPassword = binding.btnresetpass
 
         btnResetPassword.setOnClickListener{
-            Intent(this, UpdateProfile::class.java).also {
+            Intent(this, ResetPassword::class.java).also {
                 startActivity(it)
             }
         }
-        val btnupdate = binding.btnUpdateDosen
+//        val btnupdate = binding.btnUpdateDosen
+//
+//        btnupdate.setOnClickListener{
+//            Intent(this, UpdateProfile::class.java).also{
+//                startActivity(it)
+//            }
+//        }
+    }
 
-        btnupdate.setOnClickListener{
-            Intent(this, ResetPassword::class.java).also{
-                startActivity(it)
-            }
-        }
+    fun halamaprofile(view: View) {
+        val nama = binding.textuserdosen.text.toString()
+        val email = binding.textemaildosen.text.toString()
+        val updateProfil = Intent(this, UpdateProfile::class.java )
+        updateProfil.putExtra("Nama", nama)
+        updateProfil.putExtra("Email", email)
+        startActivity(updateProfil)
     }
 }

@@ -20,7 +20,6 @@ import retrofit2.Response
 
 class HalamanLoginApp : AppCompatActivity() {
     lateinit var binding: ActivityHalamanLoginAppBinding
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHalamanLoginAppBinding.inflate(layoutInflater)

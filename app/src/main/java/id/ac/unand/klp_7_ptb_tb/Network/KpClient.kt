@@ -15,9 +15,21 @@ interface KpClient {
     @GET("/api/me")
     fun profile(@Header("Authorization") token:String):Call<ProfileResponse>
 
+    @FormUrlEncoded
     @POST("/api/me/update")
-    fun updateProfile(@Field("email") email: String, @Field("name") name:String): Call<UpdateProfileResponse>
+    fun updateProfile(
+        @Header("Authorization") token:String,
+        @Field("name") name:String,
+        @Field("email") email:String
+    ): Call<UpdateProfileResponse>
 
+    @FormUrlEncoded
     @POST("/api/password")
-    fun changePassword(@Field("old_password") old_password: String, @Field("new_password") new_password:String, @Field("confirm_password") confirm_password:String): Call<ChangePasswordResponse>
+    fun changePassword(
+        @Header("Authorization") token: String,
+        @Field("old_password") old_password: String,
+        @Field("new_password") new_password: String,
+        @Field("confirm_password") confirm_password: String,
+    )
+    : Call<ChangePasswordResponse>
 }
