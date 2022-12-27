@@ -20,8 +20,6 @@ class DetailMahasiswa : AppCompatActivity(){
     private lateinit var recyclerView: RecyclerView
     private lateinit var logbookArrayList: ArrayList<datalogbook>
     lateinit var binding: ActivityDetailMahasiswaBinding
-
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailMahasiswaBinding.inflate(layoutInflater)

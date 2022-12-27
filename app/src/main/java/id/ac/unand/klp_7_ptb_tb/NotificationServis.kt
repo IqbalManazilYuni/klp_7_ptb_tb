@@ -15,7 +15,6 @@ import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 
 class NotificationServis : FirebaseMessagingService() {
-    private var CHANNEL_ID = "1"
     override fun onNewToken(token: String) {
         val TAG = "Service-Debug"
         Log.d(TAG, "Refreshed token: $token")
@@ -26,8 +25,8 @@ class NotificationServis : FirebaseMessagingService() {
         }
     }
     private fun createNotificationChannel() {
-        // Create the NotificationChannel, but only on API 26+ because
-        // the NotificationChannel class is new and not in the support library
+        val CHANNEL_ID = "Isi Respon"
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val name = "Isi Respon"
             val descriptionText = "Notifikasi Dosen Mengisi Respon"
@@ -44,7 +43,8 @@ class NotificationServis : FirebaseMessagingService() {
         val intent = Intent(this, IsiRespon::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
-        val pendingIntent: PendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
+        val pendingIntent: PendingIntent =
+            PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
 
         val builder = NotificationCompat.Builder(this, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_baseline_done_all_24)
@@ -56,8 +56,7 @@ class NotificationServis : FirebaseMessagingService() {
             .setAutoCancel(true)
         with(NotificationManagerCompat.from(this)) {
             // notificationId is a unique int for each notification that you must define
-            val notificationId = 1
-            notify(notificationId, builder.build())
+            notify(1234, builder.build())
         }
     }
 }

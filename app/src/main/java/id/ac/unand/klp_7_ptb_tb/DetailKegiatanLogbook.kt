@@ -10,7 +10,6 @@ import id.ac.unand.klp_7_ptb_tb.databinding.ActivityDetailKegiatanLogbookBinding
 
 class DetailKegiatanLogbook : AppCompatActivity() {
     lateinit var binding: ActivityDetailKegiatanLogbookBinding
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailKegiatanLogbookBinding.inflate(layoutInflater)
