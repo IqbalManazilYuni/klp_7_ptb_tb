@@ -7,50 +7,26 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class SeminarAdapter(private val hadirList:ArrayList<Hadir>) : RecyclerView.Adapter<SeminarAdapter.HadirViewHolder>(){
+class SeminarAdapter(private val seminarlist:ArrayList<daftarseminar>)
+    : RecyclerView.Adapter<SeminarAdapter.SeminarViewHolder>(){
 
-//    private lateinit var mahasiswaListener : onItemClickListener
-//
-//    interface onItemClickListener{
-//        fun onItemClick(position: Int)
-//    }
-//
-//    fun setOnItemClickListerner(listener:onItemClickListener){
-//        mahasiswaListener = listener
-//    }
+    class SeminarViewHolder(itemView: View,):RecyclerView.ViewHolder(itemView){
+        val namaMahasiswaSeminar : TextView = itemView.findViewById(R.id.nama_mahasiswa_item)
+        val nimMahasiswaSeminar : TextView = itemView.findViewById(R.id.lokasi_mahasiswa_item)
+        }
 
-    //nampilin data sesuai dengan bagian layout
-
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HadirViewHolder {
-
-        val imageView =LayoutInflater.from(parent.context).inflate(R.layout.item_seminar,
-        parent,false)
-        return HadirViewHolder(imageView)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SeminarViewHolder {
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_seminar, parent, false)
+        return SeminarViewHolder(itemView)
     }
 
-    override fun onBindViewHolder(holder: HadirViewHolder, position: Int) {
-
-        val currentItem = hadirList[position]
-        holder.imgview.setImageResource(currentItem.imgview)
-        holder.namaMahasiswa.text = currentItem.nama_mahasiswa
-        holder.nimMahasiswa.text = currentItem.nim_mahasiswa
+    override fun onBindViewHolder(holder: SeminarViewHolder, position: Int) {
+        val SeminarList = seminarlist[position]
+        holder.namaMahasiswaSeminar.text = SeminarList.nama_mahasiswa_seminar
+        holder.nimMahasiswaSeminar.text = SeminarList.nim_mahasiswa_seminar
     }
 
     override fun getItemCount(): Int {
-        return hadirList.size
+        return seminarlist.size
     }
-
-    class HadirViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
-        val imgview : ImageView = itemView.findViewById(R.id.gambar_mahasiswa_item)
-        val namaMahasiswa : TextView = itemView.findViewById(R.id.nama_mahasiswa_item)
-        val nimMahasiswa : TextView = itemView.findViewById(R.id.nim_mahasiswa_item)
-
-//        init{
-//            itemView.setOnClickListener{
-//                listener.onItemClick(absoluteAdapterPosition)
-//            }
-//        }
-    }
-
 }

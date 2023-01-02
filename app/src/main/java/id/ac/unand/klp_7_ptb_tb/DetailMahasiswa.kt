@@ -20,8 +20,6 @@ class DetailMahasiswa : AppCompatActivity(){
     private lateinit var recyclerView: RecyclerView
     private lateinit var logbookArrayList: ArrayList<datalogbook>
     lateinit var binding: ActivityDetailMahasiswaBinding
-
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailMahasiswaBinding.inflate(layoutInflater)
@@ -35,7 +33,7 @@ class DetailMahasiswa : AppCompatActivity(){
         binding.valueNimDetail.text = nim
         binding.valueTempatDetail.text = tempat
 
-        val btnbacdetaillog = findViewById<ImageView>(R.id.backBtn)
+        val btnbacdetaillog = binding.backBtn
 
         btnbacdetaillog.setOnClickListener{
             onBackPressed();
