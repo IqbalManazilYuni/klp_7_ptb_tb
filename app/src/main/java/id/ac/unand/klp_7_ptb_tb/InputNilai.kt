@@ -45,6 +45,7 @@ class InputNilai : AppCompatActivity() {
     }
 
     private fun showNotification(){
+
         val builder = NotificationCompat.Builder(this, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_notification)
             .setContentTitle("BERHASIL MENGHAPUS")
