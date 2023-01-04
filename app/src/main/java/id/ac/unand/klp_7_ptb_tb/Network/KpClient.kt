@@ -37,6 +37,7 @@ interface KpClient {
     : Call<ChangePasswordResponse>
 
     @GET("/api/internship-students")
-    fun getMahasiswa(@Header("Authorization") token:String) : Call<MahasiswaResponse>
+    fun listmahasiswa(@Header("Authorization") token: String
+    ):Call<MahasiswaResponse>
 
 }

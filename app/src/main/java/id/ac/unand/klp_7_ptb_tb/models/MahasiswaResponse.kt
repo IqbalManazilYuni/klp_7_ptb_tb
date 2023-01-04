@@ -7,7 +7,7 @@ data class MahasiswaResponse(
     val internships: List<ListMahasiswa?>? = null,
 
     @field:SerializedName("count")
-    val user: Int? = null,
+    val count: Int? = null,
 
     @field:SerializedName("status")
     val status: String? = null

@@ -27,13 +27,13 @@ class DetailMahasiswa : AppCompatActivity(){
         binding = ActivityDetailMahasiswaBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val bundle : Bundle? = intent.extras
-        val nama = bundle!!.getString("nama")
+        val name = bundle!!.getString("nama")
         val nim = bundle!!.getString("nim")
-        val tempat = bundle!!.getString("tempat")
+        val agency = bundle!!.getString("tempat")
 
-        binding.valueNameDetail.text = nama
+        binding.valueNameDetail.text = name
         binding.valueNimDetail.text = nim
-        binding.valueTempatDetail.text = tempat
+        binding.valueTempatDetail.text = agency
 
         val btnbacdetaillog = binding.backBtn
 
