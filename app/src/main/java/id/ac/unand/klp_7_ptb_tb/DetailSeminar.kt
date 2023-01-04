@@ -1,17 +1,11 @@
 package id.ac.unand.klp_7_ptb_tb
 
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
-import id.ac.unand.klp_7_ptb_tb.Network.KpClient
-import id.ac.unand.klp_7_ptb_tb.Network.NetworkConfig
+import android.widget.ImageView
 import id.ac.unand.klp_7_ptb_tb.databinding.ActivityDetailSeminarBinding
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class DetailSeminar : AppCompatActivity() {
     lateinit var binding: ActivityDetailSeminarBinding
@@ -21,27 +15,40 @@ class DetailSeminar : AppCompatActivity() {
         binding = ActivityDetailSeminarBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val btnbacrp = binding.backBtn
+        /*val bundle : Bundle? = intent.extras
+        val name = bundle!!.getString("name")
+        val nim = bundle.getString("nim")
+        val agency = bundle.getString("agency")
+        val supervisor = bundle.getString("supervisor")
+        val start_at = bundle.getString("start_at")
+        val end_at = bundle.getString("end_at")
+        val title = bundle.getString("title")
 
-        btnbacrp.setOnClickListener{
+        binding.name.text = name
+        binding.nim.text = nim
+        binding.agency.text = agency
+        binding.supervisor.text = supervisor
+        binding.startAt.text = start_at
+        binding.endAt.text = end_at
+        binding.title.text = title*/
+
+        val btnbacinput = findViewById<ImageView>(R.id.backBtn)
+
+        btnbacinput.setOnClickListener{
             onBackPressed();
         }
 
-        val detail_seminar_btn = findViewById<Button>(R.id.detail_seminar_btn)
 
+        val detail_seminar_btn = binding.detailSeminarBtn
         detail_seminar_btn.setOnClickListener{
-            Intent(this,Seminar::class.java).also {
-                startActivity(it)
-            }
+            val intent = Intent (this,Seminar::class.java)
+            startActivity(intent)
         }
 
-        val berita_acara_btn = findViewById<Button>(R.id.berita_acara_btn)
-
+        val berita_acara_btn = binding.beritaAcaraBtn
         berita_acara_btn.setOnClickListener{
-            Intent(this,BeritaAcara::class.java).also {
-                startActivity(it)
-            }
+            val intent = Intent (this,BeritaAcara::class.java)
+                startActivity(intent)
         }
-
-        }
+    }
 }

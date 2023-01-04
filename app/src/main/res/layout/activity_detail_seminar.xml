@@ -88,97 +88,74 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="284dp"
                     android:layout_marginBottom="2dp">
 
                     <TextView
                         android:id="@+id/nama_detail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="2dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
                         android:text="Nama Mahasiswa"
-                        android:textSize="12sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-                        app:layout_constraintStart_toEndOf="@+id/imageView"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.101" />
-
-                    <ImageView
-                        android:id="@+id/imageView"
-                        android:layout_width="82dp"
-                        android:layout_height="82dp"
-                        android:layout_marginStart="4dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.0"
-                        app:srcCompat="@drawable/ic_username"
-                        tools:ignore="ImageContrastCheck" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/nim_detail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="2dp"
-                        android:layout_marginTop="4dp"
+                        android:layout_marginTop="5dp"
                         android:text="Nim Mahasiswa"
-                        android:textSize="12sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-                        app:layout_constraintStart_toEndOf="@+id/imageView"
-                        app:layout_constraintTop_toBottomOf="@+id/nama_detail"
-                        app:layout_constraintVertical_bias="0.0" />
+                        app:layout_constraintStart_toStartOf="@+id/nama_detail"
+                        app:layout_constraintTop_toBottomOf="@+id/nama_detail" />
 
                     <TextView
                         android:id="@+id/tempat_detail"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="2dp"
-                        android:layout_marginTop="4dp"
+                        android:layout_width="60dp"
+                        android:layout_height="19dp"
+                        android:layout_marginTop="5dp"
                         android:text="Tempat Kp"
-                        android:textSize="12sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-                        app:layout_constraintStart_toEndOf="@+id/imageView"
-                        app:layout_constraintTop_toBottomOf="@+id/nim_detail"
-                        app:layout_constraintVertical_bias="0.0" />
+                        app:layout_constraintStart_toStartOf="@+id/nim_detail"
+                        app:layout_constraintTop_toBottomOf="@+id/nim_detail" />
 
                     <TextView
                         android:id="@+id/dosen_detail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="2dp"
-                        android:layout_marginTop="4dp"
+                        android:layout_marginTop="5dp"
                         android:text="Dosen Pembimbing"
-                        android:textSize="12sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-                        app:layout_constraintStart_toEndOf="@+id/imageView"
-                        app:layout_constraintTop_toBottomOf="@+id/tempat_detail"
-                        app:layout_constraintVertical_bias="0.0" />
+                        app:layout_constraintStart_toStartOf="@+id/tempat_detail"
+                        app:layout_constraintTop_toBottomOf="@+id/tempat_detail" />
 
                     <TextView
                         android:id="@+id/textView17"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
+                        android:layout_marginStart="48dp"
                         android:text="|"
-                        android:textSize="12sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="@+id/nama_detail"
                         app:layout_constraintStart_toEndOf="@+id/nama_detail"
-                        app:layout_constraintTop_toTopOf="@+id/nama_detail" />
+                        app:layout_constraintTop_toTopOf="@+id/nama_detail"
+                        app:layout_constraintVertical_bias="0.0" />
 
                     <TextView
                         android:id="@+id/textView18"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
+                        android:layout_marginTop="5dp"
                         android:text="|"
-                        android:textSize="12sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="@+id/textView17"
                         app:layout_constraintStart_toStartOf="@+id/textView17"
@@ -188,9 +165,9 @@
                         android:id="@+id/textView19"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
+                        android:layout_marginTop="5dp"
                         android:text="|"
-                        android:textSize="12sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="@+id/textView18"
                         app:layout_constraintStart_toStartOf="@+id/textView18"
@@ -200,21 +177,21 @@
                         android:id="@+id/textView20"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
+                        android:layout_marginTop="5dp"
                         android:text="|"
-                        android:textSize="12sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="@+id/textView19"
                         app:layout_constraintStart_toStartOf="@+id/textView19"
                         app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
                     <TextView
-                        android:id="@+id/value_name_detail"
+                        android:id="@+id/name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
+                        android:layout_marginStart="28dp"
                         android:text="Iqbal Manazil Yuni"
-                        android:textSize="12sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="@+id/textView17"
                         app:layout_constraintStart_toEndOf="@+id/textView17"
@@ -222,40 +199,145 @@
                         app:layout_constraintVertical_bias="0.0" />
 
                     <TextView
-                        android:id="@+id/value_nim_detail"
+                        android:id="@+id/nim"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:layout_marginTop="4dp"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginTop="5dp"
                         android:text="2011522007"
-                        android:textSize="12sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toEndOf="@+id/textView18"
-                        app:layout_constraintTop_toBottomOf="@+id/value_name_detail" />
+                        app:layout_constraintTop_toBottomOf="@+id/name" />
 
                     <TextView
-                        android:id="@+id/value_tempat_detail"
+                        android:id="@+id/agency"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:layout_marginTop="4dp"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginTop="5dp"
                         android:text="PT. Semen Padang"
-                        android:textSize="12sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toEndOf="@+id/textView19"
-                        app:layout_constraintTop_toBottomOf="@+id/value_nim_detail" />
+                        app:layout_constraintTop_toBottomOf="@+id/nim" />
 
                     <TextView
-                        android:id="@+id/value_dosen_detail"
+                        android:id="@+id/supervisor"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:layout_marginTop="4dp"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginTop="5dp"
                         android:text="Ricky Akbar"
-                        android:textSize="12sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toEndOf="@+id/textView20"
-                        app:layout_constraintTop_toBottomOf="@+id/value_tempat_detail" />
+                        app:layout_constraintTop_toBottomOf="@+id/agency" />
+
+                    <TextView
+                        android:id="@+id/start_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Mulai KP"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/dosen_detail"
+                        app:layout_constraintTop_toBottomOf="@+id/dosen_detail" />
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="|"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/textView20"
+                        app:layout_constraintStart_toStartOf="@+id/textView20"
+                        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+                    <TextView
+                        android:id="@+id/start_at"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginTop="5dp"
+                        android:text="2022"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/textView16"
+                        app:layout_constraintTop_toBottomOf="@+id/supervisor" />
+
+                    <TextView
+                        android:id="@+id/end_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Akhir KP"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/start_detail"
+                        app:layout_constraintTop_toBottomOf="@+id/start_detail" />
+
+                    <TextView
+                        android:id="@+id/textView34"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="|"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/textView16"
+                        app:layout_constraintStart_toStartOf="@+id/textView16"
+                        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+                    <TextView
+                        android:id="@+id/end_at"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginTop="5dp"
+                        android:text="2022"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/textView34"
+                        app:layout_constraintTop_toBottomOf="@+id/start_at" />
+
+                    <TextView
+                        android:id="@+id/judul_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Judul"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/end_detail"
+                        app:layout_constraintTop_toBottomOf="@+id/end_detail" />
+
+                    <TextView
+                        android:id="@+id/textView37"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="|"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/textView34"
+                        app:layout_constraintStart_toStartOf="@+id/textView34"
+                        app:layout_constraintTop_toBottomOf="@+id/textView34" />
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="159dp"
+                        android:layout_height="87dp"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Pembuatan Aplikasi X"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/textView37"
+                        app:layout_constraintTop_toBottomOf="@+id/end_at" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -270,7 +352,7 @@
         android:id="@+id/detail_seminar_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="#55B8EE"
         android:text="List Peserta Seminar"
         app:layout_constraintEnd_toEndOf="parent"
@@ -284,9 +366,9 @@
         android:layout_marginTop="28dp"
         android:backgroundTint="#55B8EE"
         android:text="Buat Berita Acara Mahasiswa"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/detail_seminar_btn"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/detail_seminar_btn"
         app:layout_constraintTop_toBottomOf="@+id/detail_seminar_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

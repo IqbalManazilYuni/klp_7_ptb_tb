@@ -35,10 +35,10 @@ interface KpClient {
     )
     : Call<ChangePasswordResponse>
 
-    @GET("/api/internship-students/5/seminar")
-    fun getDetailSeminar(@Header("Authorization") token:String) : Call<SeminarResponse>
+    @GET("/api/internship-students")
+    fun seminarlist(@Header("Authorization") token:String) :Call<SeminarResponse>
 
-    @GET("/api/my-internship/5")
-    fun getDataMhs(@Header("Authorization") token:String) : Call<MahasiswaResponse>
+    @GET("/api/internship-students/5/seminar")
+    fun dataMhs(@Header("Authorization") token:String) : Call<MahasiswaResponse>
 
 }

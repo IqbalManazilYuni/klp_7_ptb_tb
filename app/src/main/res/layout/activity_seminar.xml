@@ -214,7 +214,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
                     <TextView
-                        android:id="@+id/value_name_detail"
+                        android:id="@+id/name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="4dp"
@@ -227,7 +227,7 @@
                         app:layout_constraintVertical_bias="0.0" />
 
                     <TextView
-                        android:id="@+id/value_nim_detail"
+                        android:id="@+id/nim"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="4dp"
@@ -236,10 +236,10 @@
                         android:textSize="12sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toEndOf="@+id/textView18"
-                        app:layout_constraintTop_toBottomOf="@+id/value_name_detail" />
+                        app:layout_constraintTop_toBottomOf="@+id/name" />
 
                     <TextView
-                        android:id="@+id/value_tempat_detail"
+                        android:id="@+id/agency"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="4dp"
@@ -248,10 +248,10 @@
                         android:textSize="12sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toEndOf="@+id/textView19"
-                        app:layout_constraintTop_toBottomOf="@+id/value_nim_detail" />
+                        app:layout_constraintTop_toBottomOf="@+id/nim" />
 
                     <TextView
-                        android:id="@+id/value_dosen_detail"
+                        android:id="@+id/supervisor"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="4dp"
@@ -260,7 +260,7 @@
                         android:textSize="12sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toEndOf="@+id/textView20"
-                        app:layout_constraintTop_toBottomOf="@+id/value_tempat_detail" />
+                        app:layout_constraintTop_toBottomOf="@+id/agency" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
