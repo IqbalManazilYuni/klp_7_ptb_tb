@@ -3,7 +3,6 @@ package id.ac.unand.klp_7_ptb_tb
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -11,8 +10,8 @@ class SeminarAdapter(private val seminarlist:ArrayList<daftarseminar>)
     : RecyclerView.Adapter<SeminarAdapter.SeminarViewHolder>(){
 
     class SeminarViewHolder(itemView: View,):RecyclerView.ViewHolder(itemView){
-        val namaMahasiswaSeminar : TextView = itemView.findViewById(R.id.nama_mahasiswa_item)
-        val nimMahasiswaSeminar : TextView = itemView.findViewById(R.id.lokasi_mahasiswa_item)
+        val nama : TextView = itemView.findViewById(R.id.nama)
+        val nim : TextView = itemView.findViewById(R.id.nim)
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SeminarViewHolder {
@@ -22,8 +21,8 @@ class SeminarAdapter(private val seminarlist:ArrayList<daftarseminar>)
 
     override fun onBindViewHolder(holder: SeminarViewHolder, position: Int) {
         val SeminarList = seminarlist[position]
-        holder.namaMahasiswaSeminar.text = SeminarList.nama_mahasiswa_seminar
-        holder.nimMahasiswaSeminar.text = SeminarList.nim_mahasiswa_seminar
+        holder.nama.text = SeminarList.nama_mahasiswa_seminar
+        holder.nim.text = SeminarList.nim_mahasiswa_seminar
     }
 
     override fun getItemCount(): Int {

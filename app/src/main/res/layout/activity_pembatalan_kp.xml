@@ -255,7 +255,7 @@
                         android:layout_height="434dp">
 
                         <TextView
-                            android:id="@+id/tanggallogbok"
+                            android:id="@+id/judul"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="40dp"
@@ -276,8 +276,8 @@
                             android:textStyle="bold"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.0"
-                            app:layout_constraintStart_toStartOf="@+id/tanggallogbok"
-                            app:layout_constraintTop_toBottomOf="@+id/tanggallogbok" />
+                            app:layout_constraintStart_toStartOf="@+id/judul"
+                            app:layout_constraintTop_toBottomOf="@+id/judul" />
 
                         <TextView
                             android:id="@+id/textView21"
@@ -387,7 +387,7 @@
                             android:layout_width="84dp"
                             android:layout_height="37dp"
                             android:layout_marginTop="124dp"
-                            android:backgroundTint="#FF018786"
+                            android:backgroundTint="#55B8EE"
                             android:text="Kirim"
                             android:textSize="11sp"
                             app:layout_constraintEnd_toEndOf="parent"

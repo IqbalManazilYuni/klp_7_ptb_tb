@@ -50,8 +50,8 @@ class DetailMahasiswa : AppCompatActivity(){
                         intent.putExtras(Bundle())
                         startActivity(intent)
                     }
-                    R.id.l_seminar ->{
-                        val pinda2 = Intent(this@DetailMahasiswa,Seminar::class.java)
+                    R.id.l_detailseminar ->{
+                        val pinda2 = Intent(this@DetailMahasiswa,DetailSeminar::class.java)
                         startActivity(pinda2)
                     }
                     R.id.l_pembatalan ->{

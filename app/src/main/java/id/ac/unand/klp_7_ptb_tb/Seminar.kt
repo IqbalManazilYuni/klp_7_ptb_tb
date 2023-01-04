@@ -2,16 +2,22 @@ package id.ac.unand.klp_7_ptb_tb
 
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.DatePicker
-import android.widget.ImageView
-import android.widget.TextView
+import android.util.Log
+import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import id.ac.unand.klp_7_ptb_tb.Network.KpClient
+import id.ac.unand.klp_7_ptb_tb.Network.NetworkConfig
 import id.ac.unand.klp_7_ptb_tb.databinding.ActivitySeminarBinding
+import id.ac.unand.klp_7_ptb_tb.models.SeminarInItem
+import id.ac.unand.klp_7_ptb_tb.models.SeminarResponse
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -28,17 +34,44 @@ class Seminar : AppCompatActivity() {
         binding = ActivitySeminarBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //dimulai
-        recyclerView = findViewById(R.id.recyle_view_3)
-        recyclerView.setHasFixedSize(true)
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        val SeminarAdapter = SeminarAdapter(seminarList)
 
-        seminarList = ArrayList()
+        val sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE) ?: return
+        val token = sharedPref.getString("token",null)
 
-        seminarList.add(daftarseminar("Iqbal Manazil Yuni", "201152xxxx"))
+        val seminarInItem =ArrayList<SeminarInItem>()
 
-        seminarAdapter = SeminarAdapter(seminarList)
-        recyclerView.adapter = seminarAdapter
+        recyclerView =binding.recyleView3
+
+
+        val client: KpClient = NetworkConfig().getService()
+        val call: Call<SeminarResponse> = client.getDetailSeminar("Bearer "+token)
+
+        call.enqueue(object : Callback<SeminarResponse> {
+            override fun onResponse(call: Call<SeminarResponse>, response: Response<SeminarResponse>) {
+
+                val respon: SeminarResponse? = response.body()
+                if (respon!= null){
+                    val list : List<SeminarInItem> = respon.internships as List<SeminarInItem>
+                }
+
+
+                Log.d("anjay", response.toString())
+            }
+
+            override fun onFailure(call: Call<SeminarResponse>, t: Throwable) {
+                Toast.makeText(this@Seminar, t.localizedMessage, Toast.LENGTH_SHORT).show()
+            }
+
+        })
+
+        val btnbacrp = binding.backBtn
+
+        btnbacrp.setOnClickListener{
+            onBackPressed();
+        }
+
+
 
 
     }

@@ -286,7 +286,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/tanggallogbok"
+                        android:id="@+id/judul"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="40dp"
@@ -307,8 +307,8 @@
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="@+id/tanggallogbok"
-                        app:layout_constraintTop_toBottomOf="@+id/tanggallogbok" />
+                        app:layout_constraintStart_toStartOf="@+id/judul"
+                        app:layout_constraintTop_toBottomOf="@+id/judul" />
 
                     <TextView
                         android:id="@+id/textView21"

@@ -4,7 +4,7 @@
     <item android:title="Input Nilai"
         android:id="@+id/l_inputnilai"/>
     <item android:title="Seminar"
-        android:id="@+id/l_seminar"/>
+        android:id="@+id/l_detailseminar"/>
     <item android:title="Pembatalan KP"
         android:id="@+id/l_pembatalan"/>
 </menu>

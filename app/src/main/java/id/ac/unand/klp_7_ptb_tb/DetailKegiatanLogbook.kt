@@ -18,7 +18,7 @@ class DetailKegiatanLogbook : AppCompatActivity() {
         val bundle : Bundle? = intent.extras
         val tanggal = bundle!!.getString("tanggal")
 
-        binding.tanggallogbok.text = tanggal
+        binding.tempatDetail.text = tanggal
 
         val btnaddrespon = findViewById<Button>(R.id.respon)
         btnaddrespon.setOnClickListener{
