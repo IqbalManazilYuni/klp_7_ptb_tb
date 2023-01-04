@@ -1,8 +1,11 @@
 package id.ac.unand.klp_7_ptb_tb.Network
 
+import id.ac.unand.klp_7_ptb_tb.DashboardKp
 import id.ac.unand.klp_7_ptb_tb.models.*
+import id.ac.unand.tb_klp_7.MahasiswaAdapter
 import retrofit2.Call
 import retrofit2.http.*
+import retrofit2.http.GET
 
 interface KpClient {
     @FormUrlEncoded
@@ -32,4 +35,8 @@ interface KpClient {
         @Field("confirm_password") confirm_password: String,
     )
     : Call<ChangePasswordResponse>
+
+    @GET("/api/internship-students")
+    fun getMahasiswa(@Header("Authorization") token:String) : Call<MahasiswaResponse>
+
 }

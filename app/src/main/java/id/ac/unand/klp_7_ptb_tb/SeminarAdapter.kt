@@ -3,7 +3,6 @@ package id.ac.unand.klp_7_ptb_tb
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -11,8 +10,8 @@ class SeminarAdapter(private val seminarlist:ArrayList<daftarseminar>)
     : RecyclerView.Adapter<SeminarAdapter.SeminarViewHolder>(){
 
     class SeminarViewHolder(itemView: View,):RecyclerView.ViewHolder(itemView){
-        val namaMahasiswaSeminar : TextView = itemView.findViewById(R.id.nama_mahasiswa_item)
-        val nimMahasiswaSeminar : TextView = itemView.findViewById(R.id.lokasi_mahasiswa_item)
+        val namaMahasiswaSeminar : TextView = itemView.findViewById(R.id.name)
+        val nimMahasiswaSeminar : TextView = itemView.findViewById(R.id.agency)
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SeminarViewHolder {

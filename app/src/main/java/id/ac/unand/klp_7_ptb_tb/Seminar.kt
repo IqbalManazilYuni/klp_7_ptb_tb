@@ -35,7 +35,7 @@ class Seminar : AppCompatActivity() {
 
         seminarList = ArrayList()
 
-        seminarList.add(daftarseminar("Iqbal Manazil Yuni", "201152xxxx"))
+        seminarList.add(daftarseminar("Deyola Fadwa Shifana", "2011522032"))
 
         seminarAdapter = SeminarAdapter(seminarList)
         recyclerView.adapter = seminarAdapter

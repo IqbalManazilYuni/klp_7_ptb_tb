@@ -17,7 +17,7 @@ class NetworkConfig {
     }
     fun getRetrofit() : Retrofit {
         return Retrofit.Builder()
-            .baseUrl("http://ptb-api.husnilkamil.my.id")
+            .baseUrl("http://ptb-api.husnilkamil.my.id/")
             .client(getInterceptor())
             .addConverterFactory(GsonConverterFactory.create())
             .build()

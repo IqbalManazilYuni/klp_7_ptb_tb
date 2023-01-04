@@ -4,13 +4,12 @@ import android.os.Parcel
 import android.os.Parcelable
 
 data class mahasiswa (
-    val imgview:Int,
-    val nama_mahasiswa:String,
-    val nim_mahasiswa:String,
-    val lokasi_kp : String
+    val name:String,
+    val nim:String,
+    val agency : String
 ) : Parcelable {
+
     constructor(parcel: Parcel) : this(
-        parcel.readInt(),
         parcel.readString()!!,
         parcel.readString()!!,
         parcel.readString()!!
@@ -22,10 +21,9 @@ data class mahasiswa (
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeInt(imgview)
-        parcel.writeString(nama_mahasiswa)
-        parcel.writeString(nim_mahasiswa)
-        parcel.writeString(lokasi_kp)
+        parcel.writeString(name)
+        parcel.writeString(nim)
+        parcel.writeString(agency)
     }
 
     companion object CREATOR : Parcelable.Creator<mahasiswa> {
