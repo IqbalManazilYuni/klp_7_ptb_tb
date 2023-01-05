@@ -26,7 +26,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/nama"
+                android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -43,8 +43,8 @@
                 android:layout_marginStart="2dp"
                 android:text="|"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                app:layout_constraintStart_toEndOf="@+id/nama"
-                app:layout_constraintTop_toTopOf="@+id/nama" />
+                app:layout_constraintStart_toEndOf="@+id/name"
+                app:layout_constraintTop_toTopOf="@+id/name" />
 
             <TextView
                 android:id="@+id/nim_mahasiswa_item"
@@ -88,7 +88,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/card_photo_profile_mahasiswa"
-                app:layout_constraintTop_toBottomOf="@+id/nama" />
+                app:layout_constraintTop_toBottomOf="@+id/name" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

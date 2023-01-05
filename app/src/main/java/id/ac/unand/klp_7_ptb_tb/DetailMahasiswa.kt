@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import id.ac.unand.klp_7_ptb_tb.databinding.ActivityDashboardKpBinding
 import id.ac.unand.klp_7_ptb_tb.databinding.ActivityDetailMahasiswaBinding
+import id.ac.unand.klp_7_ptb_tb.databinding.ActivityDetailSeminarBinding
 
 class DetailMahasiswa : AppCompatActivity(){
 
@@ -24,14 +25,17 @@ class DetailMahasiswa : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         binding = ActivityDetailMahasiswaBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val bundle : Bundle? = intent.extras
-        val nama = bundle!!.getString("nama")
-        val nim = bundle!!.getString("nim")
-        val tempat = bundle!!.getString("tempat")
 
-        binding.valueNameDetail.text = nama
-        binding.valueNimDetail.text = nim
-        binding.valueTempatDetail.text = tempat
+        /*val bundle : Bundle? = intent.extras
+        val name = bundle!!.getString("name")
+        val nim = bundle!!.getString("nim")
+        val agency = bundle!!.getString("agency")
+        val supervisor = bundle!!.getString("supervisor")
+
+        binding.name.text = name
+        binding.nim.text = nim
+        binding.agency.text = agency
+        binding.supervisor.text = supervisor*/
 
         val btnbacdetaillog = binding.backBtn
 

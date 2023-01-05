@@ -33,12 +33,30 @@ interface KpClient {
         @Field("new_password") new_password: String,
         @Field("confirm_password") confirm_password: String,
     )
-    : Call<ChangePasswordResponse>
+            : Call<ChangePasswordResponse>
 
     @GET("/api/internship-students")
     fun seminarlist(@Header("Authorization") token:String) :Call<SeminarResponse>
 
-    @GET("/api/internship-students/5/seminar")
+    @GET("/api/internship-students/{id}/seminar")
     fun dataMhs(@Header("Authorization") token:String) : Call<MahasiswaResponse>
+
+    @PATCH("/api/internship-students/{id}/approve-audiences")
+    fun accPeserta(@Header("Authorization") token: String,
+                   @Path("id") id:Int
+    ):Call<SeminarResponse>
+
+    @GET("/api/internship-students/{id}/seminar")
+    fun detailSeminar(@Header("Authorization") token:String,
+                      @Path("id") id: Int
+    ):Call<DetailSeminarResponse>
+
+    @FormUrlEncoded
+    @PATCH("/api/internship-students/{id}/seminar")
+    fun isi_berita(
+        @Header("Authorization") token : String,
+        @Path("id")id: Int,
+        @Field("news_event")news_event:String
+    ):Call<InputBeritaAcaraResponse>
 
 }

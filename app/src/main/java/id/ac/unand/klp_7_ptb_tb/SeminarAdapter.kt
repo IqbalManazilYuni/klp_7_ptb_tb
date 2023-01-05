@@ -9,7 +9,7 @@ import id.ac.unand.klp_7_ptb_tb.models.SeminarInItem
 class SeminarAdapter()
     : RecyclerView.Adapter<SeminarAdapter.SeminarViewHolder>(){
 
-    private lateinit var seminarListener: SeminarAdapter.onItemClicklistener
+    private lateinit var seminarListener: onItemClicklistener
     interface onItemClicklistener{
         fun onItemClick(position: Int)
     }
@@ -41,12 +41,12 @@ class SeminarAdapter()
 
     inner class SeminarViewHolder(val itemBinding : ItemSeminarBinding,listener :
     onItemClicklistener):
-            RecyclerView.ViewHolder(itemBinding.root){
-                init {
-                    itemView.setOnClickListener{
-                        listener.onItemClick(bindingAdapterPosition)
-                    }
-                }
+        RecyclerView.ViewHolder(itemBinding.root){
+        init {
+            itemView.setOnClickListener{
+                listener.onItemClick(bindingAdapterPosition)
             }
+        }
+    }
 
 }

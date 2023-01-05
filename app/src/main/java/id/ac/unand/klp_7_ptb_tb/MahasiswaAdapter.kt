@@ -25,7 +25,7 @@ class MahasiswaAdapter(private val mahasiswaList:ArrayList<mahasiswa>)
     //nampilin data sesuai dengan bagian layout
     class MahasiswaViewHolder(itemView: View,listener: onItemClickListener) : RecyclerView.ViewHolder(itemView){
         val imageview : ImageView = itemView.findViewById(R.id.gambar_mahasiswa_item)
-        val namaMahasiswa : TextView = itemView.findViewById(R.id.nama)
+        val namaMahasiswa : TextView = itemView.findViewById(R.id.name)
         val nimMahasiswa : TextView = itemView.findViewById(R.id.nim_mahasiswa_item)
         val lokasiMahasiswa : TextView = itemView.findViewById(R.id.nim)
         init{
