@@ -41,6 +41,6 @@ interface KpClient {
     ):Call<MahasiswaResponse>
 
     @GET("/api/internship-students")
-    fun detailmahasiswa(@Header("Authorization") token: String
-    ):Call<DetailMResponse>
+    fun detailmahasiswaKP(@Header("Authorization") token: String
+    ):Call<MahasiswaResponse>
 }

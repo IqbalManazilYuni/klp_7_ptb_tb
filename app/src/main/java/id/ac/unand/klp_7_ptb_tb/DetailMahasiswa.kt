@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.PopupMenu
 import android.widget.Toast
@@ -12,8 +13,16 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import id.ac.unand.klp_7_ptb_tb.Network.KpClient
+import id.ac.unand.klp_7_ptb_tb.Network.NetworkConfig
 import id.ac.unand.klp_7_ptb_tb.databinding.ActivityDashboardKpBinding
 import id.ac.unand.klp_7_ptb_tb.databinding.ActivityDetailMahasiswaBinding
+import id.ac.unand.klp_7_ptb_tb.models.DetailMResponse
+import id.ac.unand.klp_7_ptb_tb.models.ListMahasiswa
+import id.ac.unand.klp_7_ptb_tb.models.MahasiswaResponse
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class DetailMahasiswa : AppCompatActivity(){
 
@@ -32,10 +41,39 @@ class DetailMahasiswa : AppCompatActivity(){
         val sharedTokennya = getSharedPreferences("sharedpref", MODE_PRIVATE)?: return
         val Detailpref = getSharedPreferences("Mahasiswapref", MODE_PRIVATE)?:return
 
+        val token = sharedTokennya.getString("token",null)
+        val id = sharedTokennya.getInt("id",2)
+        val idl = Detailpref.getString("detailmahasiswa",null)
+        Log.d("Detail-Mahasiswa-debug","respon "+idl.toString())
 
+        val client: KpClient = NetworkConfig().getService()
+        val call: Call<MahasiswaResponse> = client.detailmahasiswaKP(token = "Bearer"+token)
+        Log.d("Detail-Mahasiwa-debug","respon "+token.toString())
+        call.enqueue(object : Callback<MahasiswaResponse> {
+            override fun onResponse(
+                call: Call<MahasiswaResponse>,
+                response: Response<MahasiswaResponse>
+            ){
+                val respon = response.body()
+                Log.d("Detail-mahasiswa-debug-selalu-saja",respon.toString())
+                if(respon!=null) {
+                    Log.d("Detail-mahasiswa-debug-selalu", respon.toString())
+                    val name = respon.internships
+                    binding.name.text = name.toString()
+                    val nim = respon.internships
+                    binding.nim.text = nim.toString()
+                    val agency = respon.internships
+                    binding.agency.text = agency.toString()
+                    val supervisor = respon.internships
+                    binding.supervisor.text = supervisor.toString()
 
+                }
+            }
+            override fun onFailure(call: Call<MahasiswaResponse>, t: Throwable) {
+                Log.d("detail-debug", t.localizedMessage)
+            }
+        })
 
-        //narok data habis di intent
         val btnopsi = findViewById<Button>(R.id.btnopsi)
         btnopsi.setOnClickListener{
             val popupMenu: PopupMenu = PopupMenu(this,btnopsi)
@@ -61,8 +99,11 @@ class DetailMahasiswa : AppCompatActivity(){
             popupMenu.show()
         }
 
+
+
+
+
+
     }
 
 }
-
-
